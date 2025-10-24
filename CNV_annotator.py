@@ -116,7 +116,10 @@ class HGVSCNVAnnotator:
         event_type = event_type.lower().strip()
 
         # Generate base HGVS notation
-        base_notation = f"chr{chrom}:(?_{start})_({end}_?)"
+        start_part = f"(?_{start})"
+        end_part = f"({end}_?)"
+        base_notation = f"chr{chrom}:{start_part}_{end_part}"
+
 
         # Determine event suffix
         if event_type in ['duplication', 'dup']:
