@@ -173,8 +173,8 @@ if st.button("Annotate"):
     hgvs, full = annotator.generate_hgvs(coordinate, event_type)
     if full:
         lines = full.split("\n")
-        st.success(lines[0])
+        st.text(lines[0])
         if len(lines) > 1:
-            st.success(lines[1])
+            st.text(lines[1])
     else:
         st.error("Invalid input or no cytoband found.")
