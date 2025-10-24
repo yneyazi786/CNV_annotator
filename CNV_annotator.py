@@ -170,8 +170,11 @@ coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
 event_type = st.selectbox("Select event type", ["duplication", "deletion"])
 
 if st.button("Annotate"):
-    _, result = annotator.generate_hgvs(coordinate, event_type)
-    if result:
-        st.success(result)
+    hgvs, full = annotator.generate_hgvs(coordinate, event_type)
+    if full:
+        lines = full.split("\n")
+        st.success(lines[0])
+        if len(lines) > 1:
+            st.success(lines[1])
     else:
         st.error("Invalid input or no cytoband found.")
