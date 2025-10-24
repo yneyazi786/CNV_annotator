@@ -162,24 +162,16 @@ class HGVSCNVAnnotator:
 
 
 # Streamlit UI
-st.title("CNV HGVS Annotator with Cytoband")
-st.write("Annotate copy number variants using HGVS notation plus cytoband information.")
+st.title("HGVS CNV Annotator")
 
-uploaded_file = st.file_uploader("Upload cytoband file (.txt)", type=["txt"])
-if uploaded_file:
-    cytoband_df = pd.read_table(uploaded_file, header=None)
-    cytoband_df.columns = ['chrom', 'start', 'end', 'cytoband', 'stain']
-    annotator = HGVSCNVAnnotator(cytoband_df)
+annotator = HGVSCNVAnnotator("cytoBand.txt")
 
-    coordinate = st.text_input("Enter genomic coordinate (e.g. chr16:15489724-16367962)")
-    event_type = st.selectbox("Select CNV event type", options=["duplication", "deletion"])
+coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
+event_type = st.selectbox("Select event type", ["duplication", "deletion"])
 
-    if st.button("Annotate"):
-        hgvs, full_annotation = annotator.generate_hgvs(coordinate, event_type)
-        if full_annotation:
-            st.success("Annotation generated below:")
-            st.code(full_annotation)
-        else:
-            st.error("Annotation failed. Please check your input format.")
-else:
-    st.info("Please upload your cytoband file first.")
+if st.button("Annotate"):
+    _, result = annotator.generate_hgvs(coordinate, event_type)
+    if result:
+        st.success(result)
+    else:
+        st.error("Invalid input or no cytoband found.")
