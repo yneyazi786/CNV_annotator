@@ -116,7 +116,7 @@ st.title("HGVS CNV Annotator")
 st.markdown(
      """
     **⚠️ Important:**  
-    This tool is designed exclusively for **multigene CNV analysis**.  
+    This tool is designed exclusively for **multigene CNV annotation**.  
     It should **not** be used for **single-exon events** or **whole-chromosome duplications/deletions**.
     """,
     unsafe_allow_html=True
