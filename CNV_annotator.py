@@ -116,7 +116,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background: radial-gradient(ellipse at 70% 40%, #1de9f6 0%, #0d47a1 80%, #020924 100%);
+        background: radial-gradient(ellipse at 50% 50%, #1de9f6 0%, #0d47a1 60%, #020924 80%);
         /* Glow effect in the 'background-blend-mode' style */
         background-blend-mode: lighten;
     }
@@ -158,7 +158,12 @@ if st.button("Annotate"):
 
         st.subheader("Overlapping Genes:")
         if genes and len(genes) > 0:
-            st.success(f"Found {len(genes)} gene(s)")
+             st.markdown(
+                 f"<div style='padding:12px; border-radius:10px; color:white; background: linear-gradient(90deg, #8900fa 0%, #188afc 100%); font-weight:bold; font-            size:1.2em; width:fit-content;'>"
+                 f"Found {len(genes)} gene(s)"
+                 "</div>",
+                 unsafe_allow_html=True,
+             )
             st.write(", ".join(genes))
             if len(genes) > 5:
                 gene_df = pd.DataFrame({'Gene Name': genes})
