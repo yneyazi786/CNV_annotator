@@ -149,26 +149,25 @@ event_type = st.selectbox("Select event type", ["duplication", "deletion"], inde
 
 if st.button("Annotate"):
     hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type)
-
     if full:
-        lines = full.split("\n")
-        st.text(lines[0])
-        if len(lines) > 1:
-            st.text(lines[1])
+    lines = full.split("\n")
+    st.text(lines[0])
+    if len(lines) > 1:
+        st.text(lines[1])
 
-        st.subheader("Overlapping Genes:")
-        if genes and len(genes) > 0:
-             st.markdown(
-                 f"<div style='padding:12px; border-radius:10px; color:white; background: linear-gradient(90deg, #8900fa 0%, #188afc 100%); font-weight:bold; font-size:1.2em; width:fit-content;'>"
-                 f"Found {len(genes)} gene(s)"
-                 "</div>",
-                 unsafe_allow_html=True,
-             )
-            st.write(", ".join(genes))
-            if len(genes) > 5:
-                gene_df = pd.DataFrame({'Gene Name': genes})
-                st.dataframe(gene_df, use_container_width=True)
-        else:
-            st.info("No overlapping genes found in this region.")
+    st.subheader("Overlapping Genes:")
+    if genes and len(genes) > 0:
+        st.markdown(
+            f"<div style='padding:12px; border-radius:10px; color:white; background: linear-gradient(90deg, #8900fa 0%, #188afc 100%); font-weight:bold; font-size:1.2em; width:fit-content;'>"
+            f"Found {len(genes)} gene(s)"
+            "</div>",
+            unsafe_allow_html=True,
+        )
+        st.write(", ".join(genes))
+        if len(genes) > 5:
+            gene_df = pd.DataFrame({'Gene Name': genes})
+            st.dataframe(gene_df, use_container_width=True)
     else:
-        st.error("Invalid input or no cytoband found.")
+        st.info("No overlapping genes found in this region.")
+else:
+    st.error("Invalid input or no cytoband found.")
