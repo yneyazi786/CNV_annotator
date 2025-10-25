@@ -151,9 +151,9 @@ if st.button("Annotate"):
     hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type)
     if full:
         lines = full.split("\n")
-        st.text(lines[0])
+        st.markdown(f"**{lines[0]}**")
         if len(lines) > 1:
-            st.text(lines[1])
+            st.markdown(f"**{lines[1]**}")
         st.subheader("Overlapping Genes:")
         if genes and len(genes) > 0:
             st.markdown(
