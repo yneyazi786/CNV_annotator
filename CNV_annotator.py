@@ -112,6 +112,20 @@ class HGVSCNVAnnotator:
 # ---------------------------
 # ✅ Streamlit UI starts here
 # ---------------------------
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg,#89f7fe 0%, #66a6ff 100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("CNV Annotation Tool")
 st.markdown("""
     <style>
     div.stButton > button {
@@ -126,7 +140,7 @@ st.markdown(
      """
     **⚠️ Important:**  
     This tool is designed exclusively for **multigene CNV annotation**.  
-    It should **not** be used for **single-exon events** or **whole-chromosome duplications/deletions**.
+    It should **not** be used for **exonic events** or **whole-chromosome duplications/deletions**.
     """,
     unsafe_allow_html=True
 )
