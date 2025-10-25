@@ -133,7 +133,7 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-st.title("CNV Annotation Tool")
+st.title("GRCh37 CNV Annotation Tool")
 st.markdown(
      """
     **⚠️ Important:**  
