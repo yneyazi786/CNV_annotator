@@ -145,7 +145,7 @@ st.markdown(
 annotator = HGVSCNVAnnotator("cytoBand.txt", "Genelist.csv")
 
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
-event_type = st.selectbox("Select event type", ["duplication", "deletion"], index=0)
+event_type = st.selectbox("Select event type", ["duplication", "deletion"])
 
 if st.button("Annotate"):
     hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type)
