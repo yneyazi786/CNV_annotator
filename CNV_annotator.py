@@ -153,17 +153,7 @@ if st.button("Annotate"):
         lines = full.split("\n")
         st.text(lines[0])
         if len(lines) > 1:
-            result_text += "<br>" + lines[1]
-        st.markdown(
-            f"""
-            <div style='padding: 16px; background: linear-gradient(90deg, #23243d 0%, #014687 100%);
-            border-radius: 10px; margin: 16px 0 24px 0; color: #fff; font-weight: bold; font-size: 1.1em;
-            letter-spacing: 0.5px; box-shadow: 0 2px 12px rgba(0,0,0,0.14);'>
-            {result_text}
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            st.text(lines[1])
         st.subheader("Overlapping Genes:")
         if genes and len(genes) > 0:
             st.markdown(
