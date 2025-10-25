@@ -112,7 +112,7 @@ class HGVSCNVAnnotator:
 # ---------------------------
 # ✅ Streamlit UI starts here
 # ---------------------------
-st.title("HGVS CNV Annotator")
+st.title("CNV Annotation Tool")
 st.markdown(
      """
     **⚠️ Important:**  
