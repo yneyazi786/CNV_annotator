@@ -116,7 +116,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background: radial-gradient(ellipse at 50% 50%, #1de9f6 0%, #0d47a1 60%, #020924 80%);
+        background: radial-gradient(ellipse at 80% 1200%, #1de9f6 0%, #0d47a1 50%, #020924 100%);
         /* Glow effect in the 'background-blend-mode' style */
         background-blend-mode: lighten;
     }
