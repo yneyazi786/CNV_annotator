@@ -121,24 +121,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown(
-        """
-    <style>
-    div[data-baseweb="select"] > div {
-        background-color: #f7b2a5 !important;  /* Change to your desired color */
-    }
-    div[data-baseweb="select"] ul li:hover {
-        background-color: #4e79a7 !important;  /* Change to your desired hover color */
-        color: white !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-option = st.selectbox(
-    'Select event type',
-    ('duplication', 'deletion')
-)
 annotator = HGVSCNVAnnotator("cytoBand.txt", "Genelist.csv")
 
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
