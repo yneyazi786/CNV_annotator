@@ -153,7 +153,7 @@ if st.button("Annotate"):
         lines = full.split("\n")
         st.text(lines[0])
         if len(lines) > 1:
-            st.text(lines[1])
+            result_text += "<br>" + lines[1]
         st.markdown(
             f"""
             <div style='padding: 16px; background: linear-gradient(90deg, #23243d 0%, #014687 100%);
