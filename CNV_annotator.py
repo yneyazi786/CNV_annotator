@@ -153,7 +153,7 @@ if st.button("Annotate"):
         lines = full.split("\n")
         st.markdown(f"**{lines[0]}**")
         if len(lines) > 1:
-            st.markdown(f"**{lines[1]**}")
+            st.markdown(f"**{lines[1]}**")
         st.subheader("Overlapping Genes:")
         if genes and len(genes) > 0:
             st.markdown(
