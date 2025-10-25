@@ -198,20 +198,17 @@ class HGVSCNVAnnotator:
 
     coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
     event_type = st.selectbox("Select event type", ["duplication", "deletion"])
-
     if st.button("Annotate"):
-        hgvs, full = annotator.generate_hgvs(coordinate, event_type)
+        hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type)
         if full:
             lines = full.split("\n")
             st.text(lines[0])
-            if len(lines) > 1:
+            if len(lines)>1:
                 st.text(lines[1])
-            st.subheader("Overlapping Genes:")
-            if genes:
-                st.success(f"Found {len(genes)} gene(s)")
-                # Display as comma-separated list
-                st.write(", ".join(genes))
-                # Also display as a table for better readability if there are many genes
+            st.subheader("overlapping genes:")
+            if genes and len(genes)>0:
+                st.success(f"Found{len(genes)} gene(s)")
+                st.write(','.join(genes))
                 if len(genes) > 5:
                     gene_df = pd.DataFrame({'Gene Name': genes})
                     st.dataframe(gene_df, use_container_width=True)
@@ -219,3 +216,7 @@ class HGVSCNVAnnotator:
                     st.info("No overlapping genes found in this region.")
         else:
             st.error("Invalid input or no cytoband found.")
+                           
+
+
+    
