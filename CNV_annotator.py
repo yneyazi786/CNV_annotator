@@ -92,7 +92,7 @@ class HGVSCNVAnnotator:
         event_type = event_type.lower().strip()
         base_notation = f"chr{chrom}:(?_{start})_({end}_?)"
         if event_type in ['duplication', 'dup']:
-            hgvs_notation = f"{base_notation}[3]"
+            hgvs_notation = f"{base_notation} [3]"
             event_name = "duplication"
         elif event_type in ['deletion', 'del']:
             hgvs_notation = f"{base_notation}del"
