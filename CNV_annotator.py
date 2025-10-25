@@ -159,7 +159,7 @@ if st.button("Annotate"):
         st.subheader("Overlapping Genes:")
         if genes and len(genes) > 0:
              st.markdown(
-                 f"<div style='padding:12px; border-radius:10px; color:white; background: linear-gradient(90deg, #8900fa 0%, #188afc 100%); font-weight:bold; font-            size:1.2em; width:fit-content;'>"
+                 f"<div style='padding:12px; border-radius:10px; color:white; background: linear-gradient(90deg, #8900fa 0%, #188afc 100%); font-weight:bold; font-size:1.2em; width:fit-content;'>"
                  f"Found {len(genes)} gene(s)"
                  "</div>",
                  unsafe_allow_html=True,
