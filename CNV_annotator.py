@@ -116,16 +116,14 @@ st.markdown(
     """
     <style>
     .stApp {
-        background: linear-gradient(135deg,#89f7fe 0%, #66a6ff 100%);
-        background-size: cover;
-        background-repeat: no-repeat;
+        background: radial-gradient(ellipse at 70% 40%, #1de9f6 0%, #0d47a1 80%, #020924 100%);
+        /* Glow effect in the 'background-blend-mode' style */
+        background-blend-mode: lighten;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-st.title("CNV Annotation Tool")
 st.markdown("""
     <style>
     div.stButton > button {
