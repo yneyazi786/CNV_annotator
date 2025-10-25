@@ -113,7 +113,14 @@ class HGVSCNVAnnotator:
 # ✅ Streamlit UI starts here
 # ---------------------------
 st.title("HGVS CNV Annotator")
-
+st.markdown(
+     """
+    **⚠️ Important:**  
+    This tool is designed exclusively for **multigene CNV analysis**.  
+    It should **not** be used for **single-exon events** or **whole-chromosome duplications/deletions**.
+    """,
+    unsafe_allow_html=True
+)
 annotator = HGVSCNVAnnotator("cytoBand.txt", "Genelist.csv")
 
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)")
