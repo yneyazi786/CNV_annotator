@@ -162,6 +162,7 @@ if st.button("Annotate"):
             "</div>",
             unsafe_allow_html=True,
         )
+        st.markdown("&nbsp;")    
         st.write(", ".join(genes))
         if len(genes) > 5:
             gene_df = pd.DataFrame({'Gene Name': genes})
