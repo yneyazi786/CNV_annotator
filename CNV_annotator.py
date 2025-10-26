@@ -187,7 +187,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 annotator = HGVSCNVAnnotator("cytoBand.txt", "Genelist.csv")
-st.markdown("<label class='custom-label'>Enter coordinate (e.g., chr16:15489724-16367962)</label>", unsafe_allow_html=True)
+st.markdown("<label class='custom-label'>Enter coordinate</label>", unsafe_allow_html=True)
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)", label_visibility="collapsed")
 st.markdown("<label class='custom-label'>Select event type</label>", unsafe_allow_html=True)
 event_type = st.selectbox("Select event type", ["duplication", "deletion"], label_visibility="collapsed")
