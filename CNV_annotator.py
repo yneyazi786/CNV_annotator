@@ -216,3 +216,9 @@ if st.button("Annotate"):
             st.info("No overlapping genes found in this region.")
     else:
          st.error("Invalid input or no cytoband found.")
+
+st.markdown(
+    "<div style='color:#dff6ff; margin-top:14px; font-size:13px;'>Tip: Use the format <code>chrN:start-end</code>. Example: <code>chr16:15489724-16367962</code></div>",
+    unsafe_allow_html=True,
+)
+
