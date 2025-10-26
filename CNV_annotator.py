@@ -117,22 +117,66 @@ st.markdown(
     <style>
     .stApp {
         background: radial-gradient(ellipse at 80% 1200%, #1de9f6 0%, #0d47a1 50%, #020924 100%);
-        /* Glow effect in the 'background-blend-mode' style */
         background-blend-mode: lighten;
+    }
+    /* Annotate button */
+    div.stButton > button {
+        background-color: #28a745 !important;
+        color: white !important;
+        border: none !important;
+        padding: 0.55rem 1rem;
+        font-weight: 700;
+    }
+    /* Custom labels for inputs */
+    .custom-label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #FFFFFF;
+
+        margin-bottom: 6px;
+        display: block;
+    }
+    /* Placeholder style inside the text input */
+    div[data-testid="stTextInput"] input::placeholder {
+        font-size: 15px;
+        color: #cfeff6;
+
+        opacity: 0.95;
+    }
+    /* Warning card */
+    .warning-card {
+        background: linear-gradient(90deg,#fffbe6,#fff3cd);
+
+        color: #665100;
+
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    /* Result badge */
+    .result-badge {
+        padding:10px 14px;
+        border-radius:10px;
+        color:white;
+        background: linear-gradient(90deg, #8900fa 0%, #188afc 100%);
+
+        font-weight:700;
+        display:inline-block;
+        margin-bottom:8px;
+    }
+    /* Result area card */
+    .result-card {
+        background: rgba(255,255,255,0.03);
+        padding:12px;
+        border-radius:8px;
+        color:#e6f7ff;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-st.markdown("""
-    <style>
-    div.stButton > button {
-        background-color: #28a745 !important;
-        color: white !important;
-        border: None;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 st.title("GRCh37 CNV Annotation Tool")
 st.markdown(
      """
