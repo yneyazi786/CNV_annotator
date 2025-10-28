@@ -84,6 +84,8 @@ class HGVSCNVAnnotator:
             return f"{first_band}-{last_band_clean}"
         else:
             return f"{first_band}-{last_band}"
+            
+        cytoband = self.get_cytoband(chrom, start, end)
 
     def generate_hgvs(self, coordinate, event_type):
         parsed = self.parse_coordinate(coordinate)
