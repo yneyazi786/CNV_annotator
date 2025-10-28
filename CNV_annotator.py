@@ -189,7 +189,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-annotator = HGVSCNVAnnotator("cytoBand.txt", "Genelist.csv")
+annotator = HGVSCNVAnnotator("cytoBand.csv", "Genelist.csv")
 st.markdown("<label class='custom-label'>Enter coordinate</label>", unsafe_allow_html=True)
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)", label_visibility="collapsed")
 st.markdown("<label class='custom-label'>Select event type</label>", unsafe_allow_html=True)
