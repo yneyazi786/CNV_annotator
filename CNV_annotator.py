@@ -68,15 +68,11 @@ class HGVSCNVAnnotator:
         chr_data = self.cytoband_df[self.cytoband_df['chrom'] == chrom_str].copy()
         if chr_data.empty:
             return None
-        chr_data = chr_data.sort_values(by="start")
-        start0 = start-1
-        end0 = end-1
         overlapping = chr_data[
-            (chr_data['start'] <= end0) & (chr_data['end'] >= start0)
+            (chr_data['start'] <= end) & (chr_data['end'] >= start)
         ].copy()
         if overlapping.empty:
             return None
-        overlapping = overlapping.sort_values(by="start")
         cytobands = overlapping['cytoband'].unique()
         if len(cytobands) == 1:
             return cytobands[0]
