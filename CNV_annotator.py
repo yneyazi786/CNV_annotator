@@ -16,7 +16,7 @@ class HGVSCNVAnnotator:
 
     def load_cytoband(self, cytoband_file):
         try:
-            self.cytoband_df = pd.read_table(cytoband_file, header=None)
+            self.cytoband_df = pd.read_csv(cytoband_file, header=None)
             self.cytoband_df.columns = ['chrom', 'start', 'end', 'cytoband', 'stain']
             print(f"Loaded {len(self.cytoband_df)} cytoband entries")
         except Exception as e:
