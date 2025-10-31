@@ -208,7 +208,7 @@ st.markdown("<label class='custom-label'>Select event type</label>", unsafe_allo
 event_type = st.selectbox("Select event type", ["duplication", "deletion"], label_visibility="collapsed")
 
 if st.button("Annotate"):
-    hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type)
+    hgvs, full, genes = annotator.generate_hgvs(coordinate, event_type, zygosity)
     if full:
         lines = full.split("\n")
         st.text(lines[0])
