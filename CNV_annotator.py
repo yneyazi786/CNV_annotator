@@ -96,7 +96,7 @@ class HGVSCNVAnnotator:
         base_notation = f"chr{chrom}:(?_{start})_({end}_?)"
         if event_type in ['duplication', 'dup']:
             if zygosity:
-                zygosity.lower().strip()
+                zygosity=zygosity.lower().strip()
                 if zygosity in ['Homozygous', 'hom']:
                     copy_number="[4]"
                 elif zygosity in ['Heterozygous', 'het']:
@@ -105,7 +105,7 @@ class HGVSCNVAnnotator:
                     copy_number = "[3]"
             else:
                 copy_number = "[3]"            
-            hgvs_notation = f"{base_notation} [3]"
+            hgvs_notation = f"{base_notation} {copy_number}"
             event_name = "duplication"
         elif event_type in ['deletion', 'del']:
             hgvs_notation = f"{base_notation}del"
