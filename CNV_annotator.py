@@ -97,9 +97,9 @@ class HGVSCNVAnnotator:
         if event_type in ['duplication', 'dup']:
             if zygosity:
                 zygosity=zygosity.lower().strip()
-                if zygosity in ['Homozygous', 'hom']:
+                if zygosity in ['homozygous', 'hom']:
                     copy_number="[4]"
-                elif zygosity in ['Heterozygous', 'het']:
+                elif zygosity in ['heterozygous', 'het']:
                     copy_number="[3]"
                 else:
                     copy_number = "[3]"
