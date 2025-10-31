@@ -192,7 +192,7 @@ st.markdown(
 annotator = HGVSCNVAnnotator("cytoBand.csv", "Genelist.csv")
 st.markdown("<label class='custom-label'>Enter coordinate</label>", unsafe_allow_html=True)
 coordinate = st.text_input("Enter coordinate (e.g., chr16:15489724-16367962)", label_visibility="collapsed")
-st.markdown("<label class='custom-label'>Select zygosity</label>", unsafe_allow_html=True")
+st.markdown("<label class='custom-label'>Select zygosity</label>", label_visibility="collapsed")
 zygosity=st.selectbox("Select zygosity", ["Homozygous", "Heterozygous"], label_visibility="collapsed")
 st.markdown("<label class='custom-label'>Select event type</label>", unsafe_allow_html=True)
 event_type = st.selectbox("Select event type", ["duplication", "deletion"], label_visibility="collapsed")
