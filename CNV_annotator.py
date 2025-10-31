@@ -212,7 +212,7 @@ if st.button("Annotate"):
         )
         st.markdown("&nbsp;")    
         st.write(", ".join(genes))
-        if len(genes) > 5:
+        if len(genes) > 1:
             gene_df = pd.DataFrame({'Gene Name': genes})
             st.dataframe(gene_df, use_container_width=True)
         else:
