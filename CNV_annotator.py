@@ -87,7 +87,7 @@ class HGVSCNVAnnotator:
             
         cytoband = self.get_cytoband(chrom, start, end)
 
-    def generate_hgvs(self, coordinate, event_type, zygosity=None):
+    def generate_hgvs(self, coordinate, event_type, zygosity):
         parsed = self.parse_coordinate(coordinate)
         if not parsed:
             return None, None, []
