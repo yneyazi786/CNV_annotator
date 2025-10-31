@@ -87,7 +87,7 @@ class HGVSCNVAnnotator:
             
         cytoband = self.get_cytoband(chrom, start, end)
 
-    def generate_hgvs(self, coordinate, event_type):
+    def generate_hgvs(self, coordinate, event_type, zygosity=None):
         parsed = self.parse_coordinate(coordinate)
         if not parsed:
             return None, None, []
@@ -95,6 +95,16 @@ class HGVSCNVAnnotator:
         event_type = event_type.lower().strip()
         base_notation = f"chr{chrom}:(?_{start})_({end}_?)"
         if event_type in ['duplication', 'dup']:
+            if zygosity:
+                zygosity.lower().strip()
+                if zygosity in ['Homozygous', 'hom']:
+                    copy_number="[4]"
+                elif zygosity in ['Heterozygous', 'het']:
+                    copy_number="[3]"
+                else:
+                    copy_number = "[3]"
+            else:
+                copy_number = "[3]"            
             hgvs_notation = f"{base_notation} [3]"
             event_name = "duplication"
         elif event_type in ['deletion', 'del']:
